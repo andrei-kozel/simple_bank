@@ -5,11 +5,13 @@ import (
 	"log"
 	"os"
 	"testing"
+
+	_ "github.com/lib/pq"
 )
 
 const (	
 	dbDriver = "postgres"
-	dbSource = "postgresql://admin@localhost:26257/simple_bank?sslmode=disable"
+	dbSource = "postgresql://admin:admin@localhost:5432/simple_bank?sslmode=disable"
 )
 
 var testQueries *Queries
