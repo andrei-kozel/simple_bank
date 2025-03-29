@@ -89,7 +89,7 @@ func TestGetAccountAPI(t *testing.T) {
 
 			tc.buildStubs(mockStore)
 
-			server := NewServer(mockStore)
+			server := newTestServer(t, mockStore)
 			recorder := httptest.NewRecorder()
 
 			url := fmt.Sprintf("/accounts/%d", tc.accountID)
@@ -190,7 +190,7 @@ func TestGetListAccountsAPI(t *testing.T) {
 
 			tc.buildStubs(mockStore)
 
-			server := NewServer(mockStore)
+			server := newTestServer(t, mockStore)
 			recorder := httptest.NewRecorder()
 
 			url := fmt.Sprintf("/accounts?page_id=%d&page_size=%d", tc.req.PageID, tc.req.PageSize)
@@ -275,7 +275,7 @@ func TestCreateAccountAPI(t *testing.T) {
 
 			tc.buildStubs(mockStore)
 
-			server := NewServer(mockStore)
+			server := newTestServer(t, mockStore)
 			recorder := httptest.NewRecorder()
 
 			url := "/accounts"
